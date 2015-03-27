@@ -42,6 +42,7 @@
     <Compile Include="PluralSightAuthor.cs" />
     <Compile Include="PluralSightClip.cs" />
     <Compile Include="PluralSightCourse.cs" />
+    <Compile Include="PluralSightCourseRating.cs" />
     <Compile Include="PluralSightModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
