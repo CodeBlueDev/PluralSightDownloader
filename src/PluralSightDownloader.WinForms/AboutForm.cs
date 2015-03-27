@@ -18,12 +18,6 @@ namespace PluralSightDownloader.WinForms
             InitializeComponent();
         }
 
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            base.OnPaint(e);
-            e.Graphics.DrawLine(new Pen(Color.Black), 0, Height - 70, Width, Height - 70);
-        }
-
         private void AboutForm_Load(object sender, System.EventArgs e)
         {
             // Set the icon to the owner's icon.
@@ -111,6 +105,16 @@ namespace PluralSightDownloader.WinForms
                 _instance = new AboutForm();
             }
             return _instance.ShowDialog(owner);
+        }
+
+        private void _licenseButton_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void _closeButton_Click(object sender, System.EventArgs e)
+        {
+            Close();
         }
     }
 }
