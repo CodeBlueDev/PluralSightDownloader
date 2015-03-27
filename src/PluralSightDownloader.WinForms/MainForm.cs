@@ -8,13 +8,10 @@ namespace PluralSightDownloader.WinForms
     {
         private readonly PreferencesForm _preferencesForm;
 
-        private readonly AboutForm _aboutForm;
-
         public MainForm()
         {
             // TODO: Make the constructor take the configuration file?
             _preferencesForm = new PreferencesForm();
-            _aboutForm = new AboutForm();
 
             InitializePreferencesFormEvents();
 
@@ -69,7 +66,7 @@ namespace PluralSightDownloader.WinForms
 
         private void _aboutPluralSightDownloaderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _aboutForm.ShowDialog(this);
+            AboutForm.ShowAboutFormDialog(null);
         }
     }
 }
