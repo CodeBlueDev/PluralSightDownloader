@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PluralSightAuthor.cs" />
     <Compile Include="PluralSightClip.cs" />
     <Compile Include="PluralSightCourse.cs" />
     <Compile Include="PluralSightModule.cs" />
