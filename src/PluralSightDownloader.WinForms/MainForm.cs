@@ -26,6 +26,7 @@ namespace PluralSightDownloader.WinForms
         {
             // TODO: Play with these by making my own.
             _mainMenuStrip.Renderer = new ToolStripProfessionalRenderer();
+            _mainToolStrip.Renderer = new ToolStripProfessionalRenderer();
             _mainStatusStrip.Renderer = new ToolStripSystemRenderer();
         }
 

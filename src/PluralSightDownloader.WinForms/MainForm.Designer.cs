@@ -35,6 +35,7 @@
             this._aboutPluralSightDownloaderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._mainStatusStrip = new System.Windows.Forms.StatusStrip();
             this._preferencesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this._mainToolStrip = new System.Windows.Forms.ToolStrip();
             this._mainMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,7 +62,7 @@
             // _exitToolStripMenuItem
             // 
             this._exitToolStripMenuItem.Name = "_exitToolStripMenuItem";
-            this._exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this._exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this._exitToolStripMenuItem.Text = "E&xit";
             this._exitToolStripMenuItem.Click += new System.EventHandler(this._exitToolStripMenuItem_Click);
             // 
@@ -96,11 +97,21 @@
             this._preferencesToolStripMenuItem.Text = "Prefere&nces";
             this._preferencesToolStripMenuItem.Click += new System.EventHandler(this._preferencesToolStripMenuItem_Click);
             // 
+            // _mainToolStrip
+            // 
+            this._mainToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this._mainToolStrip.Location = new System.Drawing.Point(0, 24);
+            this._mainToolStrip.Name = "_mainToolStrip";
+            this._mainToolStrip.Size = new System.Drawing.Size(284, 25);
+            this._mainToolStrip.TabIndex = 2;
+            this._mainToolStrip.Text = "toolStrip1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this._mainToolStrip);
             this.Controls.Add(this._mainStatusStrip);
             this.Controls.Add(this._mainMenuStrip);
             this.MainMenuStrip = this._mainMenuStrip;
@@ -122,6 +133,7 @@
         private System.Windows.Forms.ToolStripMenuItem _helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem _aboutPluralSightDownloaderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem _preferencesToolStripMenuItem;
+        private System.Windows.Forms.ToolStrip _mainToolStrip;
     }
 }
 
