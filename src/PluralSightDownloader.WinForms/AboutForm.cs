@@ -1,5 +1,4 @@
-﻿using System.Drawing;
-using System.Reflection;
+﻿using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 
@@ -25,8 +24,6 @@ namespace PluralSightDownloader.WinForms
             {
                 Icon = Owner.Icon;
             }
-
-            // TODO: Graphic or something loaded on the form.
 
             // TODO: Refactor to separate methods and make the assemblies fields.
             // Get the assembly information.
@@ -85,17 +82,28 @@ namespace PluralSightDownloader.WinForms
             stringBuilder.AppendFormat("Version {0}", assemblyName.Version);
             stringBuilder.AppendLine();
             stringBuilder.AppendLine();
-            stringBuilder.AppendFormat("{0} {1}", copyrightInfo, companyInfo);
+            stringBuilder.AppendFormat("{0} {1}. All Rights Reserved.", copyrightInfo, companyInfo);
 
             _assemblyInfoLabel.Text = stringBuilder.ToString();
 
             stringBuilder.Clear();
-            stringBuilder.AppendLine("References: ");
+            stringBuilder.AppendFormat("{0} uses the following libraries:{1}{1}", _projectLabel.Text,
+                System.Environment.NewLine);
             foreach (AssemblyName referencedAssembly in assembly.GetReferencedAssemblies())
             {
                 stringBuilder.AppendFormat("\t{0}{1}", referencedAssembly.FullName, System.Environment.NewLine);
             }
             _referencedAssembliesTextBox.Text = stringBuilder.ToString();
+        }
+
+        private void _licenseButton_Click(object sender, System.EventArgs e)
+        {
+            LicenseForm.ShowLicenseFormDialog(this);
+        }
+
+        private void _closeButton_Click(object sender, System.EventArgs e)
+        {
+            _instance.Hide();
         }
 
         public static DialogResult ShowAboutFormDialog(IWin32Window owner)
@@ -105,16 +113,6 @@ namespace PluralSightDownloader.WinForms
                 _instance = new AboutForm();
             }
             return _instance.ShowDialog(owner);
-        }
-
-        private void _licenseButton_Click(object sender, System.EventArgs e)
-        {
-
-        }
-
-        private void _closeButton_Click(object sender, System.EventArgs e)
-        {
-            Close();
         }
     }
 }

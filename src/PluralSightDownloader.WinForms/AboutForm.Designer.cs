@@ -102,6 +102,9 @@
             this.Controls.Add(this._referencedAssembliesTextBox);
             this.Controls.Add(this._assemblyInfoLabel);
             this.Controls.Add(this._projectLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AboutForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "About";
