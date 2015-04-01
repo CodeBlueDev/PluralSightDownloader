@@ -14,7 +14,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluralSightDownloader.Core"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{26EBA2FC-AB88-4720-9045-17E07CB34A10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluralSightDownloader.Core.Tests", "PluralSightDownloader.Core.Tests\PluralSightDownloader.Core.Tests.csproj", "{B3724A1E-4F92-42A4-BA0F-3A5A06C6E924}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluralSightDownloader.Core.Tests", "src\PluralSightDownloader.Core.Tests\PluralSightDownloader.Core.Tests.csproj", "{B3724A1E-4F92-42A4-BA0F-3A5A06C6E924}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
