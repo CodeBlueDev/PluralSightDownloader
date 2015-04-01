@@ -66,7 +66,12 @@ namespace PluralSightDownloader.WinForms
 
         private void _aboutPluralSightDownloaderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AboutForm.ShowAboutFormDialog(null);
+            AboutForm.ShowAboutFormDialog(this);
+        }
+
+        private void _licenseInformationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LicenseForm.ShowLicenseFormDialog(this);
         }
     }
 }

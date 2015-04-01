@@ -1,16 +1,11 @@
-﻿using System.Reflection;
-using System.Text;
+﻿using System.Text;
 using System.Windows.Forms;
 
 namespace PluralSightDownloader.WinForms
 {
-    public partial class AboutForm : Form
+    public partial class AboutForm : HelpFormBase
     {
         private static AboutForm _instance;
-
-        //private Assembly _assembly;
-
-        //private AssemblyName _assemblyName;
 
         private AboutForm()
         {
@@ -19,91 +14,32 @@ namespace PluralSightDownloader.WinForms
 
         private void AboutForm_Load(object sender, System.EventArgs e)
         {
-            // Set the icon to the owner's icon.
-            if (Owner != null)
-            {
-                Icon = Owner.Icon;
-            }
-
-            // TODO: Refactor to separate methods and make the assemblies fields.
-            // Get the assembly information.
-            //_assembly = Owner == null ? Assembly.GetEntryAssembly() : Owner.GetType().Assembly;
-            //_assemblyName = _assembly.GetName();
-
-            Assembly assembly = Owner == null ? Assembly.GetEntryAssembly() : Owner.GetType().Assembly;
-            AssemblyName assemblyName = assembly.GetName();
-
-            // Iterate over the AssemblyInfo.
-            string applicationTitle = "Unknown Application";
-            string copyrightInfo = "Unknown Copyright";
-            string companyInfo = string.Empty;
-            foreach (var customAttribute in assembly.GetCustomAttributes(false))
-            {
-                AssemblyTitleAttribute titleAttribute = customAttribute as AssemblyTitleAttribute;
-                if (titleAttribute != null)
-                {
-                    applicationTitle = titleAttribute.Title;
-                }
-
-                AssemblyCopyrightAttribute copyrightAttribute = customAttribute as AssemblyCopyrightAttribute;
-                if (copyrightAttribute != null)
-                {
-                    copyrightInfo = copyrightAttribute.Copyright;
-                }
-
-                AssemblyProductAttribute productAttribute = customAttribute as AssemblyProductAttribute;
-                if (productAttribute != null)
-                {
-                    _projectLabel.Text = productAttribute.Product;
-                }
-
-                AssemblyCompanyAttribute companyAttribute = customAttribute as AssemblyCompanyAttribute;
-                if (companyAttribute != null)
-                {
-                    companyInfo = companyAttribute.Company;
-                }
-            }
-
-            // If name was an empty string, call it the assembly.
-            if (string.IsNullOrEmpty(applicationTitle))
-            {
-                applicationTitle = assemblyName.Name;
-            }
-
-            if (string.IsNullOrEmpty(_projectLabel.Text))
-            {
-                _projectLabel.Text = string.IsNullOrEmpty(applicationTitle) ? "Unknown Project" : applicationTitle;
-            }
-
-            Text = string.Format("About {0}", _projectLabel.Text);
-
             StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.AppendLine(applicationTitle);
-            stringBuilder.AppendFormat("Version {0}", assemblyName.Version);
-            stringBuilder.AppendLine();
-            stringBuilder.AppendLine();
-            stringBuilder.AppendFormat("{0} {1}. All Rights Reserved.", copyrightInfo, companyInfo);
 
-            _assemblyInfoLabel.Text = stringBuilder.ToString();
+            Text = string.Format("About {0}", AssemblyProduct);
+
+            stringBuilder.AppendLine(AssemblyTitle);
+            stringBuilder.AppendFormat("Version {0}", AssemblyVersion);
+            stringBuilder.AppendLine();
+            stringBuilder.AppendLine();
+            stringBuilder.AppendFormat("{0} {1}. All Rights Reserved.", AssemblyCopyright, AssemblyCompany);
+
+            ContentInfoLabel.Text = stringBuilder.ToString();
 
             stringBuilder.Clear();
-            stringBuilder.AppendFormat("{0} uses the following libraries:{1}{1}", _projectLabel.Text,
+            stringBuilder.AppendFormat("{0} uses the following libraries:{1}{1}", ProductTitle.Text,
                 System.Environment.NewLine);
-            foreach (AssemblyName referencedAssembly in assembly.GetReferencedAssemblies())
+            foreach (string referencedAssembly in ReferencedAssemblies)
             {
-                stringBuilder.AppendFormat("\t{0}{1}", referencedAssembly.FullName, System.Environment.NewLine);
+                stringBuilder.AppendFormat("\t{0}{1}", referencedAssembly, System.Environment.NewLine);
+                // TODO: Should this recurse a layer down for more referencedAssemblies?
             }
-            _referencedAssembliesTextBox.Text = stringBuilder.ToString();
+            ContentInfoTextBox.Text = stringBuilder.ToString();
         }
 
         private void _licenseButton_Click(object sender, System.EventArgs e)
         {
             LicenseForm.ShowLicenseFormDialog(this);
-        }
-
-        private void _closeButton_Click(object sender, System.EventArgs e)
-        {
-            _instance.Hide();
         }
 
         public static DialogResult ShowAboutFormDialog(IWin32Window owner)

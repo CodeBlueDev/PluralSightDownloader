@@ -30,12 +30,13 @@
         {
             this._mainMenuStrip = new System.Windows.Forms.MenuStrip();
             this._fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this._preferencesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._aboutPluralSightDownloaderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._mainStatusStrip = new System.Windows.Forms.StatusStrip();
-            this._preferencesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._mainToolStrip = new System.Windows.Forms.ToolStrip();
+            this._licenseInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._mainMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,17 +60,25 @@
             this._fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this._fileToolStripMenuItem.Text = "&File";
             // 
+            // _preferencesToolStripMenuItem
+            // 
+            this._preferencesToolStripMenuItem.Name = "_preferencesToolStripMenuItem";
+            this._preferencesToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this._preferencesToolStripMenuItem.Text = "Prefere&nces";
+            this._preferencesToolStripMenuItem.Click += new System.EventHandler(this._preferencesToolStripMenuItem_Click);
+            // 
             // _exitToolStripMenuItem
             // 
             this._exitToolStripMenuItem.Name = "_exitToolStripMenuItem";
-            this._exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this._exitToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this._exitToolStripMenuItem.Text = "E&xit";
             this._exitToolStripMenuItem.Click += new System.EventHandler(this._exitToolStripMenuItem_Click);
             // 
             // _helpToolStripMenuItem
             // 
             this._helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this._aboutPluralSightDownloaderToolStripMenuItem});
+            this._aboutPluralSightDownloaderToolStripMenuItem,
+            this._licenseInformationToolStripMenuItem});
             this._helpToolStripMenuItem.Name = "_helpToolStripMenuItem";
             this._helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this._helpToolStripMenuItem.Text = "&Help";
@@ -90,13 +99,6 @@
             this._mainStatusStrip.TabIndex = 1;
             this._mainStatusStrip.Text = "statusStrip1";
             // 
-            // _preferencesToolStripMenuItem
-            // 
-            this._preferencesToolStripMenuItem.Name = "_preferencesToolStripMenuItem";
-            this._preferencesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this._preferencesToolStripMenuItem.Text = "Prefere&nces";
-            this._preferencesToolStripMenuItem.Click += new System.EventHandler(this._preferencesToolStripMenuItem_Click);
-            // 
             // _mainToolStrip
             // 
             this._mainToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
@@ -105,6 +107,13 @@
             this._mainToolStrip.Size = new System.Drawing.Size(284, 25);
             this._mainToolStrip.TabIndex = 2;
             this._mainToolStrip.Text = "toolStrip1";
+            // 
+            // _licenseInformationToolStripMenuItem
+            // 
+            this._licenseInformationToolStripMenuItem.Name = "_licenseInformationToolStripMenuItem";
+            this._licenseInformationToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
+            this._licenseInformationToolStripMenuItem.Text = "&License Information...";
+            this._licenseInformationToolStripMenuItem.Click += new System.EventHandler(this._licenseInformationToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -134,6 +143,7 @@
         private System.Windows.Forms.ToolStripMenuItem _aboutPluralSightDownloaderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem _preferencesToolStripMenuItem;
         private System.Windows.Forms.ToolStrip _mainToolStrip;
+        private System.Windows.Forms.ToolStripMenuItem _licenseInformationToolStripMenuItem;
     }
 }
 
