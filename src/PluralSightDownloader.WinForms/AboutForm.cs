@@ -9,14 +9,14 @@ namespace PluralSightDownloader.WinForms
 
         private AboutForm()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
         private void AboutForm_Load(object sender, System.EventArgs e)
         {
             StringBuilder stringBuilder = new StringBuilder();
 
-            Text = string.Format("About {0}", AssemblyProduct);
+            this.Text = string.Format("About {0}", AssemblyProduct);
 
             stringBuilder.AppendLine(AssemblyTitle);
             stringBuilder.AppendFormat("Version {0}", AssemblyVersion);
@@ -24,17 +24,17 @@ namespace PluralSightDownloader.WinForms
             stringBuilder.AppendLine();
             stringBuilder.AppendFormat("{0} {1}. All Rights Reserved.", AssemblyCopyright, AssemblyCompany);
 
-            ContentInfoLabel.Text = stringBuilder.ToString();
+            this.ContentInfoLabel.Text = stringBuilder.ToString();
 
             stringBuilder.Clear();
-            stringBuilder.AppendFormat("{0} uses the following libraries:{1}{1}", ProductTitle.Text,
+            stringBuilder.AppendFormat("{0} uses the following libraries:{1}{1}", this.ProductTitle.Text,
                 System.Environment.NewLine);
             foreach (string referencedAssembly in ReferencedAssemblies)
             {
                 stringBuilder.AppendFormat("\t{0}{1}", referencedAssembly, System.Environment.NewLine);
                 // TODO: Should this recurse a layer down for more referencedAssemblies?
             }
-            ContentInfoTextBox.Text = stringBuilder.ToString();
+            this.ContentInfoTextBox.Text = stringBuilder.ToString();
         }
 
         private void _licenseButton_Click(object sender, System.EventArgs e)

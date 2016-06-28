@@ -14,7 +14,7 @@ namespace PluralSightDownloader.WinForms
 
         internal AssemblyReader(Assembly assembly = null)
         {
-            _assembly = assembly ?? Assembly.GetEntryAssembly();
+            this._assembly = assembly ?? Assembly.GetEntryAssembly();
             foreach (Attribute attribute in assembly.GetCustomAttributes())
             {
                 Type customAttributeType = attribute.GetType();
@@ -27,41 +27,41 @@ namespace PluralSightDownloader.WinForms
                     string value = propertyInfo.GetValue(attribute).ToString();
                     if (!string.IsNullOrEmpty(value))
                     {
-                        _assemblyAttributes[customAttributeType.Name] = value;
+                        this._assemblyAttributes[customAttributeType.Name] = value;
                     }
                 }
             }
             // TODO: Remove magic strings
             // If AssemblyTitle was empty, put in the assembly name.
-            if (_assemblyAttributes.ContainsKey("AssemblyTitleAttribute") && 
-                string.IsNullOrEmpty(_assemblyAttributes["AssemblyTitleAttribute"]))
+            if (this._assemblyAttributes.ContainsKey("AssemblyTitleAttribute") && 
+                string.IsNullOrEmpty(this._assemblyAttributes["AssemblyTitleAttribute"]))
             {
-                _assemblyAttributes["AssemblyTitleAttribute"] = AssemblyName.Name;
+                this._assemblyAttributes["AssemblyTitleAttribute"] = this.AssemblyName.Name;
             }
             // If AssemblyVersion was empty, put in the assembly name version
-            if (!_assemblyAttributes.ContainsKey("AssemblyVersionAttribute") || 
-                string.IsNullOrEmpty(_assemblyAttributes["AssemblyVersionAttribute"]))
+            if (!this._assemblyAttributes.ContainsKey("AssemblyVersionAttribute") || 
+                string.IsNullOrEmpty(this._assemblyAttributes["AssemblyVersionAttribute"]))
             {
-                _assemblyAttributes["AssemblyVersionAttribute"] = AssemblyName.Version.ToString();
+                this._assemblyAttributes["AssemblyVersionAttribute"] = this.AssemblyName.Version.ToString();
             }
         }
 
         private AssemblyName AssemblyName
         {
-            get { return _assemblyName ?? (_assemblyName = _assembly.GetName()); }
+            get { return this._assemblyName ?? (this._assemblyName = this._assembly.GetName()); }
         }
 
         internal string GetAssemblyProperty(string key)
         {
-            return _assemblyAttributes.ContainsKey(key) 
-                ? _assemblyAttributes[key] : 
+            return this._assemblyAttributes.ContainsKey(key) 
+                ? this._assemblyAttributes[key] : 
                 string.Empty;
         }
 
         internal string[] GetReferencedAssemblyNames()
         {
             List<string> referencedAssemblies = new List<string>();
-            foreach (AssemblyName referencedAssembly in _assembly.GetReferencedAssemblies())
+            foreach (AssemblyName referencedAssembly in this._assembly.GetReferencedAssemblies())
             {
                 referencedAssemblies.Add(referencedAssembly.FullName);
             }

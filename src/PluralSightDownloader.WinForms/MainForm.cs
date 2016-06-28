@@ -6,44 +6,50 @@ namespace PluralSightDownloader.WinForms
 {
     public partial class MainForm : Form
     {
-        private readonly PreferencesForm _preferencesForm;
+        private readonly PreferencesForm preferencesForm;
 
         public MainForm()
         {
             // TODO: Make the constructor take the configuration file?
-            _preferencesForm = new PreferencesForm();
+            this.preferencesForm = new PreferencesForm();
 
-            InitializePreferencesFormEvents();
+            this.InitializePreferencesFormEvents();
 
-            InitializeComponent();
-            InitializeToolStripRenderers();
-        }
-
-        private void InitializeToolStripRenderers()
-        {
-            // TODO: Play with these by making my own.
-            _mainMenuStrip.Renderer = new ToolStripProfessionalRenderer();
-            _mainToolStrip.Renderer = new ToolStripProfessionalRenderer();
-            _mainStatusStrip.Renderer = new ToolStripSystemRenderer();
+            this.InitializeComponent();
+            this.InitializeToolStripRenderers();
         }
 
         private void InitializePreferencesFormEvents()
         {
             // TODO: Tie up the events to save the configuration from here.
-            _preferencesForm.Closing += PreferencesFormOnClosing;
+            this.preferencesForm.Closing += this.PreferencesFormOnClosing;
         }
+
+        private void InitializeToolStripRenderers()
+        {
+            // TODO: Play with these by making my own.
+            this._mainMenuStrip.Renderer = new ToolStripProfessionalRenderer();
+            this._mainToolStrip.Renderer = new ToolStripProfessionalRenderer();
+            this._mainStatusStrip.Renderer = new ToolStripSystemRenderer();
+        }
+
+        #region Preferences Form Events
 
         private void PreferencesFormOnClosing(object sender, CancelEventArgs cancelEventArgs)
         {
             // TODO: Check and validate configuration changes.
         }
 
+        #endregion Preferences Form Events
+
+        #region Main Form Events
+
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
         }
 
-        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        protected override void OnClosing(CancelEventArgs e)
         {
             // TODO: Check if the user has something active.
             base.OnClosing(e);
@@ -54,24 +60,26 @@ namespace PluralSightDownloader.WinForms
             base.OnClosed(e);
         }
 
-        private void _exitToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ExitToolStripMenuItemOnClick(object sender, EventArgs e)
         {
-            Close();
+            this.Close();
         }
 
-        private void _preferencesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void PreferencesToolStripMenuItemOnClick(object sender, EventArgs e)
         {
-            _preferencesForm.ShowDialog(this);
+            this.preferencesForm.ShowDialog(this);
         }
 
-        private void _aboutPluralSightDownloaderToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AboutPluralSightDownloaderToolStripMenuItemOnClick(object sender, EventArgs e)
         {
             AboutForm.ShowAboutFormDialog(this);
         }
 
-        private void _licenseInformationToolStripMenuItem_Click(object sender, EventArgs e)
+        private void LicenseInformationToolStripMenuItemOnClick(object sender, EventArgs e)
         {
             LicenseForm.ShowLicenseFormDialog(this);
         }
+
+        #endregion Main Form Events
     }
 }

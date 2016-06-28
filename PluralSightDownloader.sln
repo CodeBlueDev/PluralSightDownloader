@@ -1,20 +1,31 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Applications", "Applications", "{46F9D19D-A144-4533-A67C-885F10C584B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluralSightDownloader.WinForms", "src\PluralSightDownloader.WinForms\PluralSightDownloader.WinForms.csproj", "{970EA99E-7FB8-4651-B547-D245E3FB5E51}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{04D547AD-BE47-42D5-80A1-4BDE2EB394AD}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluralSightDownloader.Common", "src\PluralSightDownloader.Common\PluralSightDownloader.Common.csproj", "{774620AB-EFF0-47CE-B8A1-93C51231677A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluralSightDownloader.Core", "src\PluralSightDownloader.Core\PluralSightDownloader.Core.csproj", "{8080AB2B-869B-4401-B74A-207ACD0F8031}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{26EBA2FC-AB88-4720-9045-17E07CB34A10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluralSightDownloader.Core.Tests", "src\PluralSightDownloader.Core.Tests\PluralSightDownloader.Core.Tests.csproj", "{B3724A1E-4F92-42A4-BA0F-3A5A06C6E924}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeBlueDev.PluralSightDownloader.WinForms", "src\CodeBlueDev.PluralSightDownloader.WinForms\CodeBlueDev.PluralSightDownloader.WinForms.csproj", "{71A13431-BADE-448F-87BF-42C9257C4490}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeBlueDev.PluralSightDownloader.Core", "src\CodeBlueDev.PluralSightDownloader.Core\CodeBlueDev.PluralSightDownloader.Core.csproj", "{45AC75F9-3309-4669-A744-D6E2722957C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{E9BC6C02-78AA-4AE0-BBA6-09411016C51D}"
+	ProjectSection(SolutionItems) = preProject
+		resources\application_exit.png = resources\application_exit.png
+		resources\course_add.png = resources\course_add.png
+		resources\course_find.png = resources\course_find.png
+		resources\course_increase_priority.png = resources\course_increase_priority.png
+		resources\course_maximum_priority.png = resources\course_maximum_priority.png
+		resources\course_minimum_priority.png = resources\course_minimum_priority.png
+		resources\course_remove.png = resources\course_remove.png
+		resources\course_view.png = resources\course_view.png
+		resources\PluralSightDownloaderLogo.ico = resources\PluralSightDownloaderLogo.ico
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeBlueDev.PluralSightDownloader.Infrastructure.WebSite", "src\CodeBlueDev.PluralSightDownloader.Infrastructure.WebSite\CodeBlueDev.PluralSightDownloader.Infrastructure.WebSite.csproj", "{BE0A4B0A-3754-4E50-96A5-40E4571D99E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,30 +33,25 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{970EA99E-7FB8-4651-B547-D245E3FB5E51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{970EA99E-7FB8-4651-B547-D245E3FB5E51}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{970EA99E-7FB8-4651-B547-D245E3FB5E51}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{970EA99E-7FB8-4651-B547-D245E3FB5E51}.Release|Any CPU.Build.0 = Release|Any CPU
-		{774620AB-EFF0-47CE-B8A1-93C51231677A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{774620AB-EFF0-47CE-B8A1-93C51231677A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{774620AB-EFF0-47CE-B8A1-93C51231677A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{774620AB-EFF0-47CE-B8A1-93C51231677A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8080AB2B-869B-4401-B74A-207ACD0F8031}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8080AB2B-869B-4401-B74A-207ACD0F8031}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8080AB2B-869B-4401-B74A-207ACD0F8031}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8080AB2B-869B-4401-B74A-207ACD0F8031}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B3724A1E-4F92-42A4-BA0F-3A5A06C6E924}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B3724A1E-4F92-42A4-BA0F-3A5A06C6E924}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B3724A1E-4F92-42A4-BA0F-3A5A06C6E924}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B3724A1E-4F92-42A4-BA0F-3A5A06C6E924}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71A13431-BADE-448F-87BF-42C9257C4490}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71A13431-BADE-448F-87BF-42C9257C4490}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71A13431-BADE-448F-87BF-42C9257C4490}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71A13431-BADE-448F-87BF-42C9257C4490}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45AC75F9-3309-4669-A744-D6E2722957C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45AC75F9-3309-4669-A744-D6E2722957C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45AC75F9-3309-4669-A744-D6E2722957C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45AC75F9-3309-4669-A744-D6E2722957C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE0A4B0A-3754-4E50-96A5-40E4571D99E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE0A4B0A-3754-4E50-96A5-40E4571D99E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE0A4B0A-3754-4E50-96A5-40E4571D99E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE0A4B0A-3754-4E50-96A5-40E4571D99E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{970EA99E-7FB8-4651-B547-D245E3FB5E51} = {46F9D19D-A144-4533-A67C-885F10C584B2}
-		{774620AB-EFF0-47CE-B8A1-93C51231677A} = {04D547AD-BE47-42D5-80A1-4BDE2EB394AD}
-		{8080AB2B-869B-4401-B74A-207ACD0F8031} = {04D547AD-BE47-42D5-80A1-4BDE2EB394AD}
-		{B3724A1E-4F92-42A4-BA0F-3A5A06C6E924} = {26EBA2FC-AB88-4720-9045-17E07CB34A10}
+		{71A13431-BADE-448F-87BF-42C9257C4490} = {46F9D19D-A144-4533-A67C-885F10C584B2}
+		{45AC75F9-3309-4669-A744-D6E2722957C5} = {04D547AD-BE47-42D5-80A1-4BDE2EB394AD}
+		{BE0A4B0A-3754-4E50-96A5-40E4571D99E4} = {04D547AD-BE47-42D5-80A1-4BDE2EB394AD}
 	EndGlobalSection
 EndGlobal

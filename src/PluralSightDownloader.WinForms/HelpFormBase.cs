@@ -18,8 +18,8 @@ namespace PluralSightDownloader.WinForms
 
         protected HelpFormBase()
         {
-            InitializeComponent();
-            _instance = this;
+            this.InitializeComponent();
+            this._instance = this;
         }
 
         protected static string AssemblyTitle
@@ -122,25 +122,25 @@ namespace PluralSightDownloader.WinForms
         private void HelpFormBase_Load(object sender, System.EventArgs e)
         {
             // Set the icon to the owner windows icon.
-            if (Owner != null)
+            if (this.Owner != null)
             {
-                Icon = Owner.Icon;
+                this.Icon = this.Owner.Icon;
             }
             
             if (_assemblyReader == null)
             {
-                _assemblyReader = Owner == null
+                _assemblyReader = this.Owner == null
                 ? new AssemblyReader()
-                : new AssemblyReader(Owner.GetType().Assembly);
+                : new AssemblyReader(this.Owner.GetType().Assembly);
             }
-            ProductTitle.Text = AssemblyProduct;
+            this.ProductTitle.Text = AssemblyProduct;
         }
 
         private void _closeButton_Click(object sender, System.EventArgs e)
         {
-            if (_instance.Visible)
+            if (this._instance.Visible)
             {
-                _instance.Hide();
+                this._instance.Hide();
             }
         }
     }

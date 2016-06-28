@@ -14,7 +14,7 @@ namespace PluralSightDownloader.WinForms
     {
         public PreferencesForm()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

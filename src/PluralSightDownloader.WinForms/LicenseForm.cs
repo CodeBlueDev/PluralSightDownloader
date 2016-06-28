@@ -9,14 +9,14 @@ namespace PluralSightDownloader.WinForms
 
         private LicenseForm()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
-        private void LicenseForm_Load(object sender, System.EventArgs e)
+        private void LicenseForm_Load(object sender, EventArgs e)
         {
             string licenseDisplay = string.Format("{0} License Information", AssemblyProduct);
-            Text = licenseDisplay;
-            ContentInfoLabel.Text = licenseDisplay;
+            this.Text = licenseDisplay;
+            this.ContentInfoLabel.Text = licenseDisplay;
             // TODO: Read and display the license.
         }
 

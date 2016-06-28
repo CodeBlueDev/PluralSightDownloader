@@ -44,51 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AboutForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AboutForm.Designer.cs">
-      <DependentUpon>AboutForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AssemblyReader.cs" />
-    <Compile Include="HelpFormBase.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HelpFormBase.Designer.cs">
-      <DependentUpon>HelpFormBase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="LicenseForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LicenseForm.Designer.cs">
-      <DependentUpon>LicenseForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PreferencesForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PreferencesForm.Designer.cs">
-      <DependentUpon>PreferencesForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AboutForm.resx">
-      <DependentUpon>AboutForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HelpFormBase.resx">
-      <DependentUpon>HelpFormBase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LicenseForm.resx">
-      <DependentUpon>LicenseForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
