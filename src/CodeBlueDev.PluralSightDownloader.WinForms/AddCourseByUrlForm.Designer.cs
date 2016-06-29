@@ -113,6 +113,7 @@
             this.Controls.Add(this._addCourseByUrlAdditionalInformationLabel);
             this.Controls.Add(this._coursesToAddTextBox);
             this.Controls.Add(this._addCourseByUrlLabel);
+            this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;

@@ -93,7 +93,7 @@
             this._downloadSettingsTabPage.Location = new System.Drawing.Point(4, 22);
             this._downloadSettingsTabPage.Name = "_downloadSettingsTabPage";
             this._downloadSettingsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this._downloadSettingsTabPage.Size = new System.Drawing.Size(453, 285);
+            this._downloadSettingsTabPage.Size = new System.Drawing.Size(453, 275);
             this._downloadSettingsTabPage.TabIndex = 0;
             this._downloadSettingsTabPage.Text = "Download Settings";
             this._downloadSettingsTabPage.UseVisualStyleBackColor = true;
@@ -252,7 +252,7 @@
             this._tableOfContentsTabPage.Controls.Add(this.treeView1);
             this._tableOfContentsTabPage.Location = new System.Drawing.Point(4, 22);
             this._tableOfContentsTabPage.Name = "_tableOfContentsTabPage";
-            this._tableOfContentsTabPage.Size = new System.Drawing.Size(453, 285);
+            this._tableOfContentsTabPage.Size = new System.Drawing.Size(453, 275);
             this._tableOfContentsTabPage.TabIndex = 2;
             this._tableOfContentsTabPage.Text = "Table of Contents";
             this._tableOfContentsTabPage.UseVisualStyleBackColor = true;
@@ -272,6 +272,7 @@
             this.Controls.Add(this._addCourseTabControl);
             this.Controls.Add(this._okButton);
             this.Controls.Add(this._cancelButton);
+            this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;

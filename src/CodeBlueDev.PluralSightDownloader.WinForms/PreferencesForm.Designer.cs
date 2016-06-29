@@ -29,20 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PreferencesForm));
-            this.listView1 = new System.Windows.Forms.ListView();
             this._applyButton = new System.Windows.Forms.Button();
             this._cancelButton = new System.Windows.Forms.Button();
             this._okButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this._buttonsFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this._loginOptionsLabel = new CodeBlueDev.PluralSightDownloader.WinForms.Controls.FlowLayoutLabel();
+            this._downloadOptionsLabel = new CodeBlueDev.PluralSightDownloader.WinForms.Controls.FlowLayoutLabel();
+            this._buttonsFlowLayoutPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // listView1
-            // 
-            this.listView1.Location = new System.Drawing.Point(12, 12);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(121, 409);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // _applyButton
             // 
@@ -82,16 +77,77 @@
             this.panel1.Size = new System.Drawing.Size(333, 409);
             this.panel1.TabIndex = 4;
             // 
+            // _buttonsFlowLayoutPanel
+            // 
+            this._buttonsFlowLayoutPanel.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this._buttonsFlowLayoutPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this._buttonsFlowLayoutPanel.Controls.Add(this._loginOptionsLabel);
+            this._buttonsFlowLayoutPanel.Controls.Add(this._downloadOptionsLabel);
+            this._buttonsFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this._buttonsFlowLayoutPanel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._buttonsFlowLayoutPanel.Location = new System.Drawing.Point(12, 12);
+            this._buttonsFlowLayoutPanel.Name = "_buttonsFlowLayoutPanel";
+            this._buttonsFlowLayoutPanel.Size = new System.Drawing.Size(120, 409);
+            this._buttonsFlowLayoutPanel.TabIndex = 5;
+            // 
+            // _loginOptionsLabel
+            // 
+            this._loginOptionsLabel.BackColor = System.Drawing.Color.Transparent;
+            this._loginOptionsLabel.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this._loginOptionsLabel.Image = global::CodeBlueDev.PluralSightDownloader.WinForms.Properties.Resources.preferences_login;
+            this._loginOptionsLabel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this._loginOptionsLabel.IsSelected = false;
+            this._loginOptionsLabel.Location = new System.Drawing.Point(10, 10);
+            this._loginOptionsLabel.Margin = new System.Windows.Forms.Padding(10, 10, 3, 10);
+            this._loginOptionsLabel.Name = "_loginOptionsLabel";
+            this._loginOptionsLabel.Padding = new System.Windows.Forms.Padding(0, 1, 0, 2);
+            this._loginOptionsLabel.SelectedBackColor = System.Drawing.Color.LightSteelBlue;
+            this._loginOptionsLabel.SelectedBorderColor = System.Drawing.Color.SteelBlue;
+            this._loginOptionsLabel.SelectedFont = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this._loginOptionsLabel.Size = new System.Drawing.Size(100, 53);
+            this._loginOptionsLabel.TabIndex = 0;
+            this._loginOptionsLabel.Text = "Login";
+            this._loginOptionsLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this._loginOptionsLabel.UnselectedBackColor = System.Drawing.Color.Transparent;
+            this._loginOptionsLabel.UnselectedBorderColor = System.Drawing.Color.Transparent;
+            this._loginOptionsLabel.UnselectedFont = new System.Drawing.Font("Tahoma", 9.75F);
+            this._loginOptionsLabel.BeforeMouseClick += new System.EventHandler<System.ComponentModel.CancelEventArgs>(this.NavigationLabelsOnBeforeMouseClick);
+            this._loginOptionsLabel.Click += new System.EventHandler(this.NavigationLabelsOnClick);
+            // 
+            // _downloadOptionsLabel
+            // 
+            this._downloadOptionsLabel.BackColor = System.Drawing.Color.Transparent;
+            this._downloadOptionsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this._downloadOptionsLabel.Image = global::CodeBlueDev.PluralSightDownloader.WinForms.Properties.Resources.preferences_download;
+            this._downloadOptionsLabel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this._downloadOptionsLabel.IsSelected = false;
+            this._downloadOptionsLabel.Location = new System.Drawing.Point(10, 83);
+            this._downloadOptionsLabel.Margin = new System.Windows.Forms.Padding(10, 10, 3, 10);
+            this._downloadOptionsLabel.Name = "_downloadOptionsLabel";
+            this._downloadOptionsLabel.Padding = new System.Windows.Forms.Padding(0, 1, 0, 2);
+            this._downloadOptionsLabel.SelectedBackColor = System.Drawing.Color.LightSteelBlue;
+            this._downloadOptionsLabel.SelectedBorderColor = System.Drawing.Color.SteelBlue;
+            this._downloadOptionsLabel.SelectedFont = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this._downloadOptionsLabel.Size = new System.Drawing.Size(100, 53);
+            this._downloadOptionsLabel.TabIndex = 1;
+            this._downloadOptionsLabel.Text = "Download";
+            this._downloadOptionsLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this._downloadOptionsLabel.UnselectedBackColor = System.Drawing.Color.Transparent;
+            this._downloadOptionsLabel.UnselectedBorderColor = System.Drawing.Color.Transparent;
+            this._downloadOptionsLabel.UnselectedFont = new System.Drawing.Font("Tahoma", 9.75F);
+            this._downloadOptionsLabel.BeforeMouseClick += new System.EventHandler<System.ComponentModel.CancelEventArgs>(this.NavigationLabelsOnBeforeMouseClick);
+            this._downloadOptionsLabel.Click += new System.EventHandler(this.NavigationLabelsOnClick);
+            // 
             // PreferencesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 462);
+            this.Controls.Add(this._buttonsFlowLayoutPanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this._okButton);
             this.Controls.Add(this._cancelButton);
             this.Controls.Add(this._applyButton);
-            this.Controls.Add(this.listView1);
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -100,16 +156,18 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Preferences";
+            this._buttonsFlowLayoutPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button _applyButton;
         private System.Windows.Forms.Button _cancelButton;
         private System.Windows.Forms.Button _okButton;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.FlowLayoutPanel _buttonsFlowLayoutPanel;
+        private Controls.FlowLayoutLabel _loginOptionsLabel;
+        private Controls.FlowLayoutLabel _downloadOptionsLabel;
     }
 }

@@ -16,6 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{
 	ProjectSection(SolutionItems) = preProject
 		resources\application_exit.png = resources\application_exit.png
 		resources\course_add.png = resources\course_add.png
+		resources\course_decrease_priority.png = resources\course_decrease_priority.png
 		resources\course_find.png = resources\course_find.png
 		resources\course_increase_priority.png = resources\course_increase_priority.png
 		resources\course_maximum_priority.png = resources\course_maximum_priority.png
@@ -23,6 +24,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{
 		resources\course_remove.png = resources\course_remove.png
 		resources\course_view.png = resources\course_view.png
 		resources\PluralSightDownloaderLogo.ico = resources\PluralSightDownloaderLogo.ico
+		resources\preferences_download.png = resources\preferences_download.png
+		resources\preferences_login.png = resources\preferences_login.png
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeBlueDev.PluralSightDownloader.Infrastructure.WebSite", "src\CodeBlueDev.PluralSightDownloader.Infrastructure.WebSite\CodeBlueDev.PluralSightDownloader.Infrastructure.WebSite.csproj", "{BE0A4B0A-3754-4E50-96A5-40E4571D99E4}"
