@@ -51,21 +51,23 @@
 
         public CourseContent GetCourseContent(Uri courseUrl)
         {
-            string[] urlLocalPath = courseUrl.LocalPath.Split('/');
+            string[] urlLocalPath = courseUrl.LocalPath.Split(
+                new[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
 
-            if (urlLocalPath.Length > 2
-                && urlLocalPath[1].Equals("courses", StringComparison.InvariantCultureIgnoreCase)
-                && !string.IsNullOrEmpty(urlLocalPath[2]))
+            if (urlLocalPath.Length >= 2
+                && urlLocalPath[0].Equals("courses", 
+                    StringComparison.InvariantCultureIgnoreCase))
             {
-                return this.GetCourseContentFromName(urlLocalPath[2]);
+                return this.GetCourseContentFromName(urlLocalPath[1]);
             }
 
-            if (urlLocalPath.Length > 3
-                && urlLocalPath[1].Equals("library", StringComparison.InvariantCultureIgnoreCase)
-                && urlLocalPath[2].Equals("courses", StringComparison.InvariantCultureIgnoreCase)
-                && !string.IsNullOrEmpty(urlLocalPath[3]))
+            if (urlLocalPath.Length >= 3
+                && urlLocalPath[0].Equals("library", 
+                    StringComparison.InvariantCultureIgnoreCase)
+                && urlLocalPath[1].Equals("courses", 
+                    StringComparison.InvariantCultureIgnoreCase))
             {
-                return this.GetCourseContentFromName(urlLocalPath[3]);
+                return this.GetCourseContentFromName(urlLocalPath[2]);
             }
 
             return null;

@@ -77,7 +77,6 @@
             this._librarySearchToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this._mainStatusStrip = new System.Windows.Forms.StatusStrip();
             this._statusToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this._pluralSightDownloaderErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this._mainMenuStrip.SuspendLayout();
             this._mainToolStrip.SuspendLayout();
             this._pluralSightDownloaderTabControl.SuspendLayout();
@@ -87,7 +86,6 @@
             this._addedCoursesDownloadDataGridViewContextMenuStrip.SuspendLayout();
             this._libraryTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._libraryDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._pluralSightDownloaderErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // _mainMenuStrip
@@ -524,10 +522,6 @@
             this._statusToolStripStatusLabel.Size = new System.Drawing.Size(45, 17);
             this._statusToolStripStatusLabel.Text = ":Status:";
             // 
-            // _pluralSightDownloaderErrorProvider
-            // 
-            this._pluralSightDownloaderErrorProvider.ContainerControl = this;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -559,7 +553,6 @@
             this._libraryTabPage.ResumeLayout(false);
             this._libraryTabPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this._libraryDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._pluralSightDownloaderErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -607,7 +600,6 @@
         private System.Windows.Forms.ToolStripButton _findPluralSightCourseDownloadToolStripButton;
         private System.Windows.Forms.ToolStripMenuItem _findPluralSightCourseDownloadDataGridViewContextMenuStripMenuItem;
         private System.Windows.Forms.ToolStripButton _findPluralSightCourseMainToolStripButton;
-        private System.Windows.Forms.ErrorProvider _pluralSightDownloaderErrorProvider;
         private ToolStripMenuItem _addPluralSightCourseByUrlMainMenuStripMenuItem;
         private ToolStripButton _addPluralSightCourseByUrlMainToolStripButton;
         private ToolStripButton _addPluralSightCourseByUrlDownloadToolStripButton;

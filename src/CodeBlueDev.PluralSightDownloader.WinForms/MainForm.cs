@@ -2,6 +2,8 @@
 {
     using System;
     using System.ComponentModel;
+    using System.Linq;
+    using System.Text;
     using System.Windows.Forms;
 
     using CodeBlueDev.PluralSightDownloader.Core.Domain;
@@ -17,10 +19,6 @@
         private readonly BindingList<DownloadDataGridViewCourseViewModel> addedCourses;
         private readonly IPluralSightProvider pluralSightProvider;
         private readonly PreferencesForm preferencesForm;
-
-        // TODO: Make these localizable string resources
-        private const string DefaultEmptyAddPluralSightCourseByUrlErrorMessage = "PluralSight Course Url Must Be Provided...";
-        private const string DefaultInvalidAddPluralSightCourseByUrlErrorMessage = "Invalid PluralSight Course Url";
 
         public MainForm()
         {
@@ -95,48 +93,68 @@
         private void AddPluralSightCourseByUrlOnClick(
             object sender, EventArgs e)
         {
-            //if (string.IsNullOrEmpty(
-            //    this._addPluralSightCourseByUrlTextBox.Text))
-            //{
-            //    this._pluralSightDownloaderErrorProvider.SetError(
-            //        this._addPluralSightCourseByUrlTextBox,
-            //        DefaultEmptyAddPluralSightCourseByUrlErrorMessage);
-            //    return;
-            //}
+            AddCourseByUrlForm addCourseByUrlForm = new AddCourseByUrlForm();
+            if (addCourseByUrlForm.ShowDialog(this) != DialogResult.OK)
+            {
+                return;
+            }
 
-            //CourseContent courseContent = null;
-            //string errorMessage = string.Empty;
+            string[] courseUrls = addCourseByUrlForm.CourseUrls;
+            if (courseUrls.Length == 0)
+            {
+                return;
+            }
 
-            //try
-            //{
-            //    courseContent =
-            //        this.pluralSightProvider.GetCourseContent(
-            //            this._addPluralSightCourseByUrlTextBox.Text);
-            //}
-            //catch (InvalidCourseUrlException invalidCourseUrlException)
-            //{
-            //    if (!string.IsNullOrEmpty(invalidCourseUrlException.Message))
-            //    {
-            //        errorMessage = invalidCourseUrlException.Message;
-            //    }
-            //}
-            
-            //if (courseContent?.Course == null || 
-            //    !courseContent.Course.IsValid ||
-            //    courseContent.Modules == null)
-            //{
-            //    this._pluralSightDownloaderErrorProvider.SetError(
-            //        this._addPluralSightCourseByUrlTextBox,
-            //        $"{DefaultInvalidAddPluralSightCourseByUrlErrorMessage}{(!string.IsNullOrEmpty(errorMessage) ? $": {errorMessage}" : "...")}");
-            //    return;
-            //}
+            StringBuilder addCourseByUrlErrorMessageBuilder = 
+                new StringBuilder();
 
-            //this._pluralSightDownloaderErrorProvider.SetError(
-            //    this._addPluralSightCourseByUrlTextBox,
-            //    string.Empty);
+            foreach (string courseUrl in courseUrls)
+            {
+                this.Cursor = Cursors.WaitCursor;
+                CourseContent courseContent = null;
 
-            //this.AddPluralSightCourse(courseContent);
-            //this._addPluralSightCourseByUrlTextBox.Text = string.Empty;
+                try
+                {
+                    courseContent = 
+                        this.pluralSightProvider.GetCourseContent(courseUrl);
+                }
+                catch (InvalidCourseUrlException invalidCourseUrlException)
+                {
+                    if (!string.IsNullOrEmpty(
+                        invalidCourseUrlException.Message))
+                    {
+                        // TODO: Abstract message to Localizable strings.
+                        addCourseByUrlErrorMessageBuilder.AppendFormat(
+                            "Unable to add '{0}' - Invalid Course Url: {1}{2}",
+                            courseUrl,
+                            invalidCourseUrlException.Message,
+                            Environment.NewLine);
+                        continue;
+                    }
+
+                    // TODO: Abstract message to Localizable strings.
+                    addCourseByUrlErrorMessageBuilder.AppendFormat(
+                        "Unable to add '{0}' - Invalid Course Url{1}",
+                        courseUrl,
+                        Environment.NewLine);
+                    continue;
+                }
+
+                if (courseContent?.Course == null || 
+                    !courseContent.Course.IsValid || 
+                    courseContent.Modules == null)
+                {
+                    // TODO: Abstract message to Localizable strings.
+                    addCourseByUrlErrorMessageBuilder.AppendFormat(
+                        "Unable to add '{0}' - Invalid Course{1}",
+                        courseUrl,
+                        Environment.NewLine);
+                    continue;
+                }
+
+                this.Cursor = Cursors.Default;
+                this.AddPluralSightCourse(courseContent);
+            }
         }
 
         private void FindPluralSightCourseOnClick(
@@ -147,6 +165,13 @@
 
         private void AddPluralSightCourse(CourseContent courseContent)
         {
+            // TODO: Is this the desired behavior to prevent user from adding the same course over.
+            if (this.addedCourses.Any(course => 
+                course.Title.Equals(courseContent.Course.Title)))
+            {
+                return;
+            }
+
             AddCourseForm addCourseForm = new AddCourseForm(courseContent);
             if (addCourseForm.ShowDialog(this) != DialogResult.OK)
             {
@@ -155,7 +180,7 @@
 
             this.addedCourses.Add(new DownloadDataGridViewCourseViewModel()
             {
-                Title = $"{this.addedCourses.Count + 1} Course"
+                Title = courseContent.Course.Title,
             });
         }
 

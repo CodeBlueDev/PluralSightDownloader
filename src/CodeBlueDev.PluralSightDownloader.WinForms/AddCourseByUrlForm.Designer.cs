@@ -34,6 +34,7 @@
             this._addCourseByUrlAdditionalInformationLabel = new System.Windows.Forms.Label();
             this._addButton = new System.Windows.Forms.Button();
             this._cancelButton = new System.Windows.Forms.Button();
+            this._ctrlEnterInformationLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // _addCourseByUrlLabel
@@ -71,6 +72,7 @@
             // _addButton
             // 
             this._addButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._addButton.DialogResult = System.Windows.Forms.DialogResult.OK;
             this._addButton.Location = new System.Drawing.Point(416, 227);
             this._addButton.Name = "_addButton";
             this._addButton.Size = new System.Drawing.Size(75, 23);
@@ -89,6 +91,15 @@
             this._cancelButton.Text = "&Cancel";
             this._cancelButton.UseVisualStyleBackColor = true;
             // 
+            // _ctrlEnterInformationLabel
+            // 
+            this._ctrlEnterInformationLabel.AutoSize = true;
+            this._ctrlEnterInformationLabel.Location = new System.Drawing.Point(12, 232);
+            this._ctrlEnterInformationLabel.Name = "_ctrlEnterInformationLabel";
+            this._ctrlEnterInformationLabel.Size = new System.Drawing.Size(156, 13);
+            this._ctrlEnterInformationLabel.TabIndex = 5;
+            this._ctrlEnterInformationLabel.Text = "Use Ctrl+Enter to go to next line";
+            // 
             // AddCourseByUrlForm
             // 
             this.AcceptButton = this._addButton;
@@ -96,6 +107,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this._cancelButton;
             this.ClientSize = new System.Drawing.Size(584, 262);
+            this.Controls.Add(this._ctrlEnterInformationLabel);
             this.Controls.Add(this._cancelButton);
             this.Controls.Add(this._addButton);
             this.Controls.Add(this._addCourseByUrlAdditionalInformationLabel);
@@ -104,6 +116,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(600, 300);
             this.Name = "AddCourseByUrlForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add by Urls";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -117,5 +130,6 @@
         private System.Windows.Forms.Label _addCourseByUrlAdditionalInformationLabel;
         private System.Windows.Forms.Button _addButton;
         private System.Windows.Forms.Button _cancelButton;
+        private System.Windows.Forms.Label _ctrlEnterInformationLabel;
     }
 }
