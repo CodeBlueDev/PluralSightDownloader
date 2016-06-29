@@ -114,8 +114,11 @@
             this.Controls.Add(this._coursesToAddTextBox);
             this.Controls.Add(this._addCourseByUrlLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(600, 300);
             this.Name = "AddCourseByUrlForm";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add by Urls";
             this.ResumeLayout(false);
