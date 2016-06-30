@@ -93,6 +93,24 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Panels\DownloadPreferencesPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\DownloadPreferencesPanel.Designer.cs">
+      <DependentUpon>DownloadPreferencesPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\LoginPreferencesPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\LoginPreferencesPanel.Designer.cs">
+      <DependentUpon>LoginPreferencesPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\PreferencesPanelBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\PreferencesPanelBase.Designer.cs">
+      <DependentUpon>PreferencesPanelBase.cs</DependentUpon>
+    </Compile>
     <Compile Include="PreferencesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +142,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\DownloadPreferencesPanel.resx">
+      <DependentUpon>DownloadPreferencesPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\LoginPreferencesPanel.resx">
+      <DependentUpon>LoginPreferencesPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PreferencesForm.resx">
       <DependentUpon>PreferencesForm.cs</DependentUpon>

@@ -1,6 +1,8 @@
 ﻿namespace CodeBlueDev.PluralSightDownloader.WinForms
 {
-    partial class PreferencesForm
+    using CodeBlueDev.PluralSightDownloader.WinForms.Panels;
+
+    sealed partial class PreferencesForm
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +34,7 @@
             this._applyButton = new System.Windows.Forms.Button();
             this._cancelButton = new System.Windows.Forms.Button();
             this._okButton = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this._contentPanel = new System.Windows.Forms.Panel();
             this._buttonsFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this._loginOptionsLabel = new CodeBlueDev.PluralSightDownloader.WinForms.Controls.FlowLayoutLabel();
             this._downloadOptionsLabel = new CodeBlueDev.PluralSightDownloader.WinForms.Controls.FlowLayoutLabel();
@@ -69,13 +71,13 @@
             this._okButton.Text = "&OK";
             this._okButton.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // _contentPanel
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(139, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(333, 409);
-            this.panel1.TabIndex = 4;
+            this._contentPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this._contentPanel.Location = new System.Drawing.Point(139, 12);
+            this._contentPanel.Name = "_contentPanel";
+            this._contentPanel.Size = new System.Drawing.Size(333, 409);
+            this._contentPanel.TabIndex = 4;
             // 
             // _buttonsFlowLayoutPanel
             // 
@@ -93,7 +95,7 @@
             // _loginOptionsLabel
             // 
             this._loginOptionsLabel.BackColor = System.Drawing.Color.Transparent;
-            this._loginOptionsLabel.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this._loginOptionsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this._loginOptionsLabel.Image = global::CodeBlueDev.PluralSightDownloader.WinForms.Properties.Resources.preferences_login;
             this._loginOptionsLabel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this._loginOptionsLabel.IsSelected = false;
@@ -144,7 +146,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 462);
             this.Controls.Add(this._buttonsFlowLayoutPanel);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this._contentPanel);
             this.Controls.Add(this._okButton);
             this.Controls.Add(this._cancelButton);
             this.Controls.Add(this._applyButton);
@@ -165,9 +167,13 @@
         private System.Windows.Forms.Button _applyButton;
         private System.Windows.Forms.Button _cancelButton;
         private System.Windows.Forms.Button _okButton;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel _contentPanel;
         private System.Windows.Forms.FlowLayoutPanel _buttonsFlowLayoutPanel;
         private Controls.FlowLayoutLabel _loginOptionsLabel;
         private Controls.FlowLayoutLabel _downloadOptionsLabel;
+
+        private LoginPreferencesPanel _loginPreferencesPanel;
+
+        private DownloadPreferencesPanel _downloadPreferencesPanel;
     }
 }
